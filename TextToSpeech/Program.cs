@@ -11,11 +11,14 @@ namespace TextToSpeech
             {
                 builder.Services.AddCors(options =>
                 {
-                    options.AddPolicy("AllowLocalhost",
-                        builder =>
-                        {
-                            builder.WithOrigins("https://insooeric.github.io/").AllowAnyHeader().AllowAnyMethod().AllowCredentials();
-                        });
+                    options.AddPolicy("AllowLocalhost", policy =>
+                    {
+                        policy.WithOrigins("https://insooeric.github.io")
+                              .AllowAnyHeader()
+                              .AllowAnyMethod()
+                              .SetIsOriginAllowedToAllowWildcardSubdomains()
+                              .AllowCredentials();
+                    });
                 });
             }
             builder.Services.AddSingleton<RealtimeDatabaseService>();
@@ -31,8 +34,8 @@ namespace TextToSpeech
                 app.UseSwaggerUI();
             }
             app.UseHttpsRedirection();
-            app.UseCors("AllowLocalhost");
 
+            app.UseCors("AllowLocalhost");
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
