@@ -1,0 +1,6 @@
+@TextToSpeech_HostAddress = http://localhost:5191
+
+GET {{TextToSpeech_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
