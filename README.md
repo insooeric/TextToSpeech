@@ -1,7 +1,7 @@
 # Text To Speech
 A simple .NET Core Project using OpenAI and Firebase for Statistics.
 
-### DEMO LINK! => [Text To Speech](https://insooeric.github.io/#/playground)
+### DEMO LINK! => [Text To Speech](https://insooeric.github.io/#/playground#Text-To-Speech)
 ---
 
 ## Tables of Contents
